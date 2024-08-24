@@ -48,8 +48,16 @@ function exercicio4() {
     let dado = prompt("Digite um dado:");
     let confirmar = confirm("Deseja verificar o tipo do dado informado?");
     if (confirmar) {
-        document.getElementById("resultado").innerText = "O tipo do dado informado é: " + typeof(dado);
+        let tipo;
+        let numeroConvertido = parseFloat(dado);
+        if (!isNaN(numeroConvertido)) {
+            tipo = "número";
+        } else {
+            tipo = "string";
+        }
+        document.getElementById("resultado").innerText = "O tipo do dado informado é: " + tipo;
     } else {
         document.getElementById("resultado").innerText = "Obrigado por visitar esta página.";
     }
 }
+
