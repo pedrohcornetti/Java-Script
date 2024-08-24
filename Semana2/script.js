@@ -7,9 +7,14 @@ function formatarDataAtual() {
     let mes = mesesDoAno[dataAtual.getMonth()];
     let ano = dataAtual.getFullYear();
     
-    let dataFormatada = `${diaSemana}, ${dia} de ${mes} de ${ano}`;
+    let horas = dataAtual.getHours();
+    let minutos = dataAtual.getMinutes();
+    let segundos = dataAtual.getSeconds();
+
+    let dataFormatada = `${diaSemana}, ${dia} de ${mes} de ${ano} - ${horas}:${minutos}:${segundos}`;
     
-    document.getElementById("dataAtual").innerText = dataFormatada;
+    document.getElementById("resultado").innerText = dataFormatada;  // Certifique-se de que o ID seja "resultado"
 }
+
 
 window.onload = formatarDataAtual;
