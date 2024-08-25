@@ -30,3 +30,16 @@ function atualizarRelogio() {
     // Atualiza o relógio a cada segundo
     setTimeout(atualizarRelogio, 1000);
 }
+
+function verificarPalindromo() {
+    let texto = document.getElementById('texto').value.toLowerCase();
+    // Remove espaços e pontuações
+    texto = texto.replace(/[^a-z0-9]/g, '');
+    const textoInvertido = texto.split('').reverse().join('');
+    
+    if (texto === textoInvertido) {
+        alert('É um palíndromo!');
+    } else {
+        alert('Não é um palíndromo.');
+    }
+}
