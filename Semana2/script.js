@@ -13,7 +13,7 @@ function formatarDataAtual() {
 
     let dataFormatada = `${diaSemana}, ${dia} de ${mes} de ${ano} - ${horas}:${minutos}:${segundos}`;
     
-    document.getElementById("resultado").innerText = dataFormatada;  // Certifique-se de que o ID seja "resultado"
+    document.getElementById("resultado").innerText = dataFormatada;  
 }
 
 
@@ -27,13 +27,13 @@ function atualizarRelogio() {
     const segundos = String(agora.getSeconds()).padStart(2, '0');
     document.getElementById('relogio').textContent = `${horas}:${minutos}:${segundos}`;
     
-    // Atualiza o relógio a cada segundo
+    
     setTimeout(atualizarRelogio, 1000);
 }
 
 function verificarPalindromo() {
     let texto = document.getElementById('texto').value.toLowerCase();
-    // Remove espaços e pontuações
+    
     texto = texto.replace(/[^a-z0-9]/g, '');
     const textoInvertido = texto.split('').reverse().join('');
     
