@@ -42,9 +42,11 @@ a {
     padding: 5px 10px;  /* Padding ajustado para simular um botão */
     background-color: #d3d3d3; /* Cor de fundo cinza claro */
     border: 2px solid black;  /* Borda preta */
+    min-width: 25%;
     border-radius: 5px;
     display: inline-block;
     transition: color 0.3s ease, background-color 0.3s ease;
+    text-align: center;
 }
 
 /* Hover para os links das atividades */

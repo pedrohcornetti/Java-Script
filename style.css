@@ -40,7 +40,7 @@ a {
     color: black;
     font-weight: bold;
     padding: 5px 10px;  /* Padding ajustado para simular um botão */
-    background-color: #d3d3d3; /* Cor de fundo cinza claro */
+    background-color: #d3d3d3;
     border: 2px solid black;  /* Borda preta */
     border-radius: 5px;
     display: inline-block;
