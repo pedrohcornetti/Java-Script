@@ -1,0 +1,55 @@
+/* Reseta alguns estilos padrão do navegador */
+body, h1, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilo para o título 'Atividades' */
+h1 {
+    color: black;
+    padding: 15px;
+    text-align: left;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Hover para o título 'Atividades' */
+h1:hover {
+    color: grey;
+}
+
+/* Estilo para a lista de links */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+/* Estilo para os links das atividades */
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;  /* Padding ajustado para simular um botão */
+    background-color: #d3d3d3; /* Cor de fundo cinza claro */
+    border: 2px solid black;  /* Borda preta */
+    border-radius: 5px;
+    display: inline-block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover para os links das atividades */
+a:hover {
+    color: grey;
+    background-color: #c0c0c0; /* Fundo cinza um pouco mais escuro no hover */
+}
+
