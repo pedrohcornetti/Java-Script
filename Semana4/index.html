@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,63 +9,84 @@
     <script src="classes.js" defer></script>
     <script src="validacao.js" defer></script>
 </head>
+
 <body>
-    <div class="bloco-form"><h1>Formulário de Cadastro:</h1>
-    <form id="cadastroForm" onsubmit="return validarFormulario()">
-        <label for="nome">Nome Completo:</label>
-        <input type="text" id="nome" name="nome" onblur="validarNome()">
-        <span id="erroNome" class="erro"></span>
-        
-        <div class="email-data">
-            <div class="campo-1">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" onblur="validarEmail()">
-                <span id="erroEmail" class="erro"></span>
+    <div class="bloco-form">
+        <h1>Formulário de Cadastro:</h1>
+        <form id="cadastroForm" onsubmit="return validarFormulario()">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" onblur="validarNome()">
+            <span id="erroNome" class="erro"></span>
+    
+            <div class="email-data">
+                <div class="campo-1">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" onblur="validarEmail()">
+                    <span id="erroEmail" class="erro"></span>
+                </div>
+    
+                <div class="campo-2">
+                    <label for="dataNascimento">Data de Nascimento:</label>
+                    <input type="date" id="dataNascimento" name="dataNascimento" onblur="validarDataNascimento()">
+                    <span id="erroData" class="erro"></span>
+                </div>
             </div>
-        
-            <div class="campo-2">
-                <label for="dataNascimento">Data de Nascimento:</label>
-                <input type="date" id="dataNascimento" name="dataNascimento" onblur="validarDataNascimento()">
-                <span id="erroData" class="erro"></span>
+    
+            <div class="telefone-perfil">
+                <div class="fixo">
+                    <label for="telefoneFixo">Telefone Fixo:</label>
+                    <input type="text" id="telefoneFixo" name="telefoneFixo" onblur="formatarTelefone(this)"
+                        maxlength="13">
+                    <span id="erroFixo" class="erro"></span>
+                </div>
+    
+                <div class="celular">
+                    <label for="telefoneCelular">Telefone Celular:</label>
+                    <input type="text" id="telefoneCelular" name="telefoneCelular" onblur="formatarCelular(this)"
+                        maxlength="13">
+                    <span id="erroCelular" class="erro"></span>
+                </div>
             </div>
-        </div>
-        
-        <label for="telefoneFixo">Telefone Fixo:</label>
-        <input type="text" id="telefoneFixo" name="telefoneFixo" onblur="formatarTelefone(this)" maxlength="13">
-        <span id="erroFixo" class="erro"></span>
-        
-        <label for="telefoneCelular">Telefone Celular:</label>
-        <input type="text" id="telefoneCelular" name="telefoneCelular" onblur="formatarCelular(this)" maxlength="13">
-        <span id="erroCelular" class="erro"></span>
-        
-        <label for="perfil">Perfil:</label>
-        <select id="perfil" name="perfil" onchange="mostrarCamposExtras()">
-            <option value="aluno">Aluno</option>
-            <option value="professor">Professor</option>
-        </select>
-
-        <div id="camposAluno" style="display: none;">
-            <label for="curso">Curso:</label>
-            <input type="text" id="curso" name="curso">
-            <span id="erroCurso" class="erro"></span>
-
-            <label for="matriculaAluno">Matrícula (10 dígitos):</label>
-            <input type="text" id="matriculaAluno" name="matriculaAluno" maxlength="10" onblur="validarMatriculaAluno()">
-            <span id="erroMatriculaAluno" class="erro"></span>
-        </div>
-
-        <div id="camposProfessor" style="display: none;">
-            <label for="areaAtuacao">Área de Atuação:</label>
-            <input type="text" id="areaAtuacao" name="areaAtuacao">
-            <span id="erroArea" class="erro"></span>
-
-            <label for="matriculaProfessor">Matrícula (5 dígitos):</label>
-            <input type="text" id="matriculaProfessor" name="matriculaProfessor" maxlength="5" onblur="validarMatriculaProfessor()">
-            <span id="erroMatriculaProfessor" class="erro"></span>
-        </div>
-
-        <button type="submit">Enviar</button>
-    </form></div>
+    
+            <div class="perfil">
+                <label>Perfil:</label>
+                <label>
+                    <input type="radio" name="perfil" value="aluno" onchange="mostrarCamposExtras()" checked> Aluno
+                </label>
+                <label>
+                    <input type="radio" name="perfil" value="professor" onchange="mostrarCamposExtras()"> Professor
+                </label>
+            </div>
+    
+            <div id="camposAluno">
+                <label for="curso">Curso:</label>
+                <input type="text" id="curso" name="curso">
+                <span id="erroCurso" class="erro"></span>
+    
+                <label for="matriculaAluno">Matrícula (10 dígitos):</label>
+                <input type="text" id="matriculaAluno" name="matriculaAluno" maxlength="10"
+                    onblur="validarMatriculaAluno()">
+                <span id="erroMatriculaAluno" class="erro"></span>
+            </div>
+    
+            <div id="camposProfessor" style="display: none;">
+                <label for="areaAtuacao">Área de Atuação:</label>
+                <input type="text" id="areaAtuacao" name="areaAtuacao">
+                <span id="erroArea" class="erro"></span>
+    
+                <label for="matriculaProfessor">Matrícula (5 dígitos):</label>
+                <input type="text" id="matriculaProfessor" name="matriculaProfessor" maxlength="5"
+                    onblur="validarMatriculaProfessor()">
+                <span id="erroMatriculaProfessor" class="erro"></span>
+            </div>
+    
+            <div class="botoes">
+                <button type="submit">Enviar</button>
+                <button type="reset">Redefinir</button>
+            </div>
+        </form>
+    </div>
+    
 </body>
-</html>
 
+</html>

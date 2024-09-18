@@ -81,7 +81,13 @@ function validarFormulario() {
 }
 
 function mostrarCamposExtras() {
-    const perfil = document.getElementById("perfil").value;
-    document.getElementById("camposAluno").style.display = perfil === "aluno" ? "block" : "none";
-    document.getElementById("camposProfessor").style.display = perfil === "professor" ? "block" : "none";
+    const perfil = document.querySelector('input[name="perfil"]:checked').value;
+    if (perfil === "aluno") {
+        document.getElementById("camposAluno").style.display = "block";
+        document.getElementById("camposProfessor").style.display = "none";
+    } else {
+        document.getElementById("camposAluno").style.display = "none";
+        document.getElementById("camposProfessor").style.display = "block";
+    }
 }
+
