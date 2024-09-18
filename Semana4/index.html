@@ -35,28 +35,26 @@
             <div class="telefone-perfil">
                 <div class="fixo">
                     <label for="telefoneFixo">Telefone Fixo:</label>
-                    <input type="text" id="telefoneFixo" name="telefoneFixo" onblur="formatarTelefone(this)"
-                        maxlength="13">
+                    <input type="text" id="telefoneFixo" name="telefoneFixo" onblur="formatarTelefone(this)" maxlength="13">
                     <span id="erroFixo" class="erro"></span>
                 </div>
-    
+            
                 <div class="celular">
                     <label for="telefoneCelular">Telefone Celular:</label>
-                    <input type="text" id="telefoneCelular" name="telefoneCelular" onblur="formatarCelular(this)"
-                        maxlength="13">
+                    <input type="text" id="telefoneCelular" name="telefoneCelular" onblur="formatarCelular(this)" maxlength="13">
                     <span id="erroCelular" class="erro"></span>
                 </div>
+            
+                <div class="perfil">
+                    <label>
+                        <input type="radio" name="perfil" value="professor" onchange="mostrarCamposExtras()"> Professor
+                    </label>
+                    <label>
+                        <input type="radio" name="perfil" value="aluno" onchange="mostrarCamposExtras()" checked> Aluno
+                    </label>
+                </div>
             </div>
-    
-            <div class="perfil">
-                <label>Perfil:</label>
-                <label>
-                    <input type="radio" name="perfil" value="aluno" onchange="mostrarCamposExtras()" checked> Aluno
-                </label>
-                <label>
-                    <input type="radio" name="perfil" value="professor" onchange="mostrarCamposExtras()"> Professor
-                </label>
-            </div>
+            
     
             <div id="camposAluno">
                 <label for="curso">Curso:</label>
