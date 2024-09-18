@@ -19,7 +19,6 @@ input {
     color: #999;
     border: none;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
     width: 100%;
     padding: 5px;
 }
@@ -40,4 +39,30 @@ button:hover {
 .erro {
     color: red;
     font-size: 10px;
+}
+
+.bloco-form {
+    width: 600px;
+    margin: auto;
+
+}
+
+.email-data{
+    display: flex;
+    justify-content: space-between; /* Espaço entre os campos para que um fique no início e o outro no final */
+    align-items: center; /* Alinha verticalmente os campos no centro */
+    width: 100%; /* O contêiner ocupa toda a largura disponível */
+    
+}
+
+.campo-1 {
+    display: flex;
+    flex-direction: column; /* Os labels e inputs são organizados em coluna dentro de cada campo */
+    width: 60%;
+}
+
+.campo-2 {
+    display: flex;
+    flex-direction: column; /* Os labels e inputs são organizados em coluna dentro de cada campo */
+    width: 28%;
 }
