@@ -1,14 +1,19 @@
 function validarNome() {
-    const nome = document.getElementById("nome").value;
-    const regex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    const nome = document.getElementById("nome").value.trim(); // Remover espaços em branco
     const erroNome = document.getElementById("erroNome");
+    
+    // Expressão regular para validar "Nome Sobrenome" com pelo menos 2 letras em cada parte
+    const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ]{2,}(?: [A-Za-zÀ-ÖØ-öø-ÿ]{2,})+$/;
+    
     if (!regex.test(nome)) {
         erroNome.textContent = "Nome inválido. Digite no formato 'Nome Sobrenome'.";
         return false;
     }
+    
     erroNome.textContent = "";
     return true;
 }
+
 
 function validarEmail() {
     const email = document.getElementById("email").value;
@@ -24,15 +29,15 @@ function validarEmail() {
 
 function validarDataNascimento() {
     const data = document.getElementById("dataNascimento").value;
-    const regex = /^\d{2}\/\d{2}\/\d{4}$/;
     const erroData = document.getElementById("erroData");
-    if (!regex.test(data)) {
-        erroData.textContent = "Data inválida. Digite no formato 'dd/mm/aaaa'.";
+    if (!data) {  // Se o valor for vazio ou inválido
+        erroData.textContent = "Data inválida. Por favor, selecione uma data.";
         return false;
     }
     erroData.textContent = "";
     return true;
 }
+
 
 function formatarTelefone(input) {
     const telefone = input.value.replace(/\D/g, '');
