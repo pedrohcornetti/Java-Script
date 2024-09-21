@@ -70,6 +70,19 @@ function validarMatriculaProfessor() {
     return true;
 }
 
+function validarLattesProfessor() {
+    const lattes = document.getElementById("lattesProfessor").value;
+    const erroLattesProfessor = document.getElementById("erroLattesProfessor");
+    const regex = /^(https?:\/\/)?(www\.)?lattes\.cnpq\.br\/[a-zA-Z0-9]+$/; // Regex para validar o link do Lattes
+    if (!regex.test(lattes)) {
+        erroLattesProfessor.textContent = "URL do Lattes inválida. Insira um link válido.";
+        return false;
+    }
+    erroLattesProfessor.textContent = "";
+    return true;
+}
+
+
 function validarFormulario() {
     const validacoes = [validarNome(), validarEmail(), validarDataNascimento()];
     if (document.getElementById("perfil").value === "aluno") {
