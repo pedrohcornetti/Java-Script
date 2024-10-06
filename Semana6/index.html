@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Letreiro com React</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    function App() {
+      const [text, setText] = React.useState('');
+      const fullText = 'Venha estudar na Fatec';
+
+      React.useEffect(() => {
+        let index = 0;
+        const interval = setInterval(() => {
+          setText(fullText.substring(0, index + 1));
+          index++;
+          if (index === fullText.length) {
+            clearInterval(interval);
+          }
+        }, 150); // Velocidade de digitação em milissegundos
+
+        return () => clearInterval(interval);
+      }, []);
+
+      return (
+        <div>
+          <h1>{text}</h1>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>
