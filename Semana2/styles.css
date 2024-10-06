@@ -1,57 +1,85 @@
-/* Reseta alguns estilos padrão do navegador */
-body, h1, ul, li {
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
     color: #333;
-    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Estilo para o título 'Atividades' */
+.container {
+    max-width: 600px;
+    width: 90%;
+    padding: 40px 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 h1 {
-    color: black;
-    padding: 15px;
-    text-align: left;
-    margin-bottom: 20px;
-    transition: color 0.3s ease;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: #333;
 }
 
-/* Hover para o título 'Atividades' */
-h1:hover {
-    color: grey;
-}
-
-/* Estilo para a lista de links */
 ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
 li {
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
-/* Estilo para os links das atividades */
 a {
+    display: block;
     text-decoration: none;
-    color: black;
-    font-weight: bold;
-    padding: 5px 10px;  /* Padding ajustado para simular um botão */
-    background-color: #d3d3d3; /* Cor de fundo cinza claro */
-    border: 2px solid black;  /* Borda preta */
-    min-width: 25%;
+    color: #fff;
+    background-color: #007BFF;
+    padding: 15px;
     border-radius: 5px;
-    display: inline-block;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#resultado, #relogio {
+    margin-top: 20px;
+    font-size: 1.2em;
     text-align: center;
 }
-
-/* Hover para os links das atividades */
-a:hover {
-    color: grey;
-    background-color: #c0c0c0; /* Fundo cinza um pouco mais escuro no hover */
-}
-
